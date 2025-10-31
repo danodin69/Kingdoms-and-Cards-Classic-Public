@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/dice_thrown.ogg-b9d3972295cf9b3fca4558749ccfdb68.oggstr"
+
+[deps]
+
+source_file="res://assets/audio/sound_fx/dice_thrown.ogg"
+dest_files=[ "res://.import/dice_thrown.ogg-b9d3972295cf9b3fca4558749ccfdb68.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

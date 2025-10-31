@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/345830__vendarro__erebor-like-horns.mp3-a66fd137f18327e7fd731eb95bdb7466.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/sound_fx/345830__vendarro__erebor-like-horns.mp3"
+dest_files=[ "res://.import/345830__vendarro__erebor-like-horns.mp3-a66fd137f18327e7fd731eb95bdb7466.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

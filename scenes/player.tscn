@@ -1,0 +1,1276 @@
+[gd_scene load_steps=26 format=2]
+
+[ext_resource path="res://assets/graphics/ui/player_deck.png" type="Texture" id=1]
+[ext_resource path="res://assets/graphics/cards/king.png" type="Texture" id=2]
+[ext_resource path="res://assets/themes/normal_text.tres" type="Theme" id=3]
+[ext_resource path="res://assets/graphics/ui/buttons/place_card_hover.png" type="Texture" id=4]
+[ext_resource path="res://assets/graphics/ui/buttons/place_card_normal.png" type="Texture" id=5]
+[ext_resource path="res://assets/graphics/ui/buttons/place_card_pressed.png" type="Texture" id=6]
+[ext_resource path="res://assets/graphics/ui/ui_cards/place_card_bg.png" type="Texture" id=7]
+[ext_resource path="res://assets/graphics/cards/citizen.png" type="Texture" id=8]
+[ext_resource path="res://assets/graphics/cards/soldier.png" type="Texture" id=9]
+[ext_resource path="res://scripts/player.gd" type="Script" id=10]
+[ext_resource path="res://assets/graphics/cards/tomb.png" type="Texture" id=11]
+[ext_resource path="res://assets/fonts/k_c_normal_text.ttf" type="DynamicFontData" id=12]
+[ext_resource path="res://assets/graphics/arena/luck_mode/kkc_#g3014_luck.png" type="Texture" id=13]
+[ext_resource path="res://assets/graphics/arena/luck_mode/kkc_#g3309.png" type="Texture" id=14]
+[ext_resource path="res://assets/fonts/k_c_board_text.ttf" type="DynamicFontData" id=15]
+[ext_resource path="res://assets/graphics/arena/luck_mode/kkc_#g3317_luck.png" type="Texture" id=16]
+[ext_resource path="res://assets/graphics/arena/luck_mode/kkc_#g3008_luck.png" type="Texture" id=17]
+[ext_resource path="res://assets/fonts/poppins/Poppins-Bold.ttf" type="DynamicFontData" id=18]
+
+[sub_resource type="DynamicFont" id=8]
+size = 12
+font_data = ExtResource( 18 )
+
+[sub_resource type="StreamTexture" id=2]
+flags = 4
+load_path = "res://.import/kkc_#g12312_exit.png-cf14c28e5b41adff328c483bae3d9200.stex"
+
+[sub_resource type="StreamTexture" id=3]
+flags = 4
+load_path = "res://.import/kkc_#g12958_exit.png-d421bcbeb8476cbe30661561c183e8e2.stex"
+
+[sub_resource type="StreamTexture" id=4]
+flags = 4
+load_path = "res://.import/kkc_#g12331_exit.png-6d2a106d891a2bb33486016cbc308356.stex"
+
+[sub_resource type="DynamicFont" id=5]
+size = 24
+outline_color = Color( 0.960784, 0.937255, 0.854902, 1 )
+font_data = ExtResource( 12 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 24
+font_data = ExtResource( 12 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 70
+font_data = ExtResource( 15 )
+
+[node name="player" type="Control"]
+anchor_left = 0.707031
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="deck" type="TextureRect" parent="."]
+anchor_left = -0.00666625
+anchor_top = 0.0508333
+anchor_right = 0.813333
+anchor_bottom = 0.765833
+texture = ExtResource( 1 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="card" type="Control" parent="deck"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -112.0
+margin_top = -190.5
+margin_right = 113.0
+margin_bottom = 198.5
+
+[node name="KING" type="Control" parent="deck/card"]
+anchor_left = 0.386667
+anchor_top = 0.794344
+anchor_right = 0.635556
+anchor_bottom = 0.994859
+mouse_default_cursor_shape = 2
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="king_card" type="TextureRect" parent="deck/card/KING"]
+anchor_right = 0.981818
+anchor_bottom = 1.0
+texture = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="strength_label_1" type="Label" parent="deck/card/KING/king_card"]
+margin_left = 4.0
+margin_top = 2.0
+margin_right = 12.0
+margin_bottom = 20.0
+theme = ExtResource( 3 )
+custom_fonts/font = SubResource( 8 )
+text = "15"
+
+[node name="strength_label_2" type="Label" parent="deck/card/KING/king_card"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -6.98182
+margin_top = -5.99997
+margin_right = 6.01818
+margin_bottom = 12.0
+rect_rotation = 180.0
+theme = ExtResource( 3 )
+custom_fonts/font = SubResource( 8 )
+text = "15"
+
+[node name="place_card_trigger" type="TextureButton" parent="deck/card/KING/king_card"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="place_card_ui" type="TextureRect" parent="deck/card/KING/king_card/place_card_trigger"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -25.0
+margin_top = -26.0
+margin_right = 25.0
+margin_bottom = 26.0
+texture = ExtResource( 7 )
+expand = true
+
+[node name="place_card_button" type="TextureButton" parent="deck/card/KING/king_card/place_card_trigger/place_card_ui"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -19.0
+margin_top = -6.0
+margin_right = 19.0
+margin_bottom = 6.0
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 6 )
+texture_hover = ExtResource( 4 )
+expand = true
+
+[node name="cancel_card_button" type="TextureButton" parent="deck/card/KING/king_card/place_card_trigger/place_card_ui"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -3.5
+margin_top = -7.0
+margin_right = 3.5
+texture_normal = SubResource( 2 )
+texture_pressed = SubResource( 3 )
+texture_hover = SubResource( 4 )
+expand = true
+
+[node name="tomb" type="TextureButton" parent="deck/card/KING/king_card"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 1
+texture_normal = ExtResource( 11 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="SOLDIERS" type="Control" parent="deck/card"]
+anchor_left = 0.382223
+anchor_top = 0.528278
+anchor_right = 0.631112
+anchor_bottom = 0.728792
+mouse_default_cursor_shape = 2
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="soldier_card_1" type="TextureRect" parent="deck/card/SOLDIERS"]
+anchor_right = 0.981818
+anchor_bottom = 1.0
+texture = ExtResource( 9 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="strength_label_1" type="Label" parent="deck/card/SOLDIERS/soldier_card_1"]
+margin_left = 4.0
+margin_top = 3.0
+margin_right = 12.0
+margin_bottom = 21.0
+theme = ExtResource( 3 )
+custom_fonts/font = SubResource( 8 )
+text = "9"
+
+[node name="strength_label_2" type="Label" parent="deck/card/SOLDIERS/soldier_card_1"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -7.98183
+margin_top = -6.00005
+margin_right = 0.0181694
+margin_bottom = 12.0
+rect_rotation = 180.0
+theme = ExtResource( 3 )
+custom_fonts/font = SubResource( 8 )
+text = "9"
+
+[node name="place_card_trigger" type="TextureButton" parent="deck/card/SOLDIERS/soldier_card_1"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="place_card_ui" type="TextureRect" parent="deck/card/SOLDIERS/soldier_card_1/place_card_trigger"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -25.0
+margin_top = -26.0
+margin_right = 25.0
+margin_bottom = 26.0
+texture = ExtResource( 7 )
+expand = true
+
+[node name="place_card_button" type="TextureButton" parent="deck/card/SOLDIERS/soldier_card_1/place_card_trigger/place_card_ui"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -19.0
+margin_top = -6.0
+margin_right = 19.0
+margin_bottom = 6.0
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 6 )
+texture_hover = ExtResource( 4 )
+expand = true
+
+[node name="cancel_card_button" type="TextureButton" parent="deck/card/SOLDIERS/soldier_card_1/place_card_trigger/place_card_ui"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -3.5
+margin_top = -7.0
+margin_right = 3.5
+texture_normal = SubResource( 2 )
+texture_pressed = SubResource( 3 )
+texture_hover = SubResource( 4 )
+expand = true
+
+[node name="tomb" type="TextureButton" parent="deck/card/SOLDIERS/soldier_card_1"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 1
+texture_normal = ExtResource( 11 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="soldier_card_2" type="TextureRect" parent="deck/card/SOLDIERS"]
+anchor_left = -1.41071
+anchor_top = 0.653846
+anchor_right = -0.428896
+anchor_bottom = 1.65385
+texture = ExtResource( 9 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="strength_label_1" type="Label" parent="deck/card/SOLDIERS/soldier_card_2"]
+margin_left = 4.0
+margin_top = 3.0
+margin_right = 12.0
+margin_bottom = 21.0
+theme = ExtResource( 3 )
+custom_fonts/font = SubResource( 8 )
+text = "9"
+
+[node name="strength_label_2" type="Label" parent="deck/card/SOLDIERS/soldier_card_2"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -7.98185
+margin_top = -6.00001
+margin_right = 0.0181503
+margin_bottom = 12.0
+rect_rotation = 180.0
+theme = ExtResource( 3 )
+custom_fonts/font = SubResource( 8 )
+text = "9"
+
+[node name="place_card_trigger" type="TextureButton" parent="deck/card/SOLDIERS/soldier_card_2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="place_card_ui" type="TextureRect" parent="deck/card/SOLDIERS/soldier_card_2/place_card_trigger"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -25.0
+margin_top = -26.0
+margin_right = 25.0
+margin_bottom = 26.0
+texture = ExtResource( 7 )
+expand = true
+
+[node name="place_card_button" type="TextureButton" parent="deck/card/SOLDIERS/soldier_card_2/place_card_trigger/place_card_ui"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -19.0
+margin_top = -6.0
+margin_right = 19.0
+margin_bottom = 6.0
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 6 )
+texture_hover = ExtResource( 4 )
+expand = true
+
+[node name="cancel_card_button" type="TextureButton" parent="deck/card/SOLDIERS/soldier_card_2/place_card_trigger/place_card_ui"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -3.5
+margin_top = -7.0
+margin_right = 3.5
+texture_normal = SubResource( 2 )
+texture_pressed = SubResource( 3 )
+texture_hover = SubResource( 4 )
+expand = true
+
+[node name="tomb" type="TextureButton" parent="deck/card/SOLDIERS/soldier_card_2"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 1
+texture_normal = ExtResource( 11 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="soldier_card_3" type="TextureRect" parent="deck/card/SOLDIERS"]
+anchor_left = 1.375
+anchor_top = 0.628205
+anchor_right = 2.35682
+anchor_bottom = 1.6282
+texture = ExtResource( 9 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="strength_label_1" type="Label" parent="deck/card/SOLDIERS/soldier_card_3"]
+margin_left = 4.0
+margin_top = 3.0
+margin_right = 12.0
+margin_bottom = 21.0
+theme = ExtResource( 3 )
+custom_fonts/font = SubResource( 8 )
+text = "9"
+
+[node name="strength_label_2" type="Label" parent="deck/card/SOLDIERS/soldier_card_3"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -7.98183
+margin_top = -5.99999
+margin_right = 0.0181732
+margin_bottom = 12.0
+rect_rotation = 180.0
+theme = ExtResource( 3 )
+custom_fonts/font = SubResource( 8 )
+text = "9"
+
+[node name="place_card_trigger" type="TextureButton" parent="deck/card/SOLDIERS/soldier_card_3"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="place_card_ui" type="TextureRect" parent="deck/card/SOLDIERS/soldier_card_3/place_card_trigger"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -25.0
+margin_top = -26.0
+margin_right = 25.0
+margin_bottom = 26.0
+texture = ExtResource( 7 )
+expand = true
+
+[node name="place_card_button" type="TextureButton" parent="deck/card/SOLDIERS/soldier_card_3/place_card_trigger/place_card_ui"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -19.0
+margin_top = -6.0
+margin_right = 19.0
+margin_bottom = 6.0
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 6 )
+texture_hover = ExtResource( 4 )
+expand = true
+
+[node name="cancel_card_button" type="TextureButton" parent="deck/card/SOLDIERS/soldier_card_3/place_card_trigger/place_card_ui"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -3.5
+margin_top = -7.0
+margin_right = 3.5
+texture_normal = SubResource( 2 )
+texture_pressed = SubResource( 3 )
+texture_hover = SubResource( 4 )
+expand = true
+
+[node name="tomb" type="TextureButton" parent="deck/card/SOLDIERS/soldier_card_3"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 1
+texture_normal = ExtResource( 11 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="soldier_card_4" type="TextureRect" parent="deck/card/SOLDIERS"]
+anchor_left = 1.375
+anchor_top = -1.11538
+anchor_right = 2.35682
+anchor_bottom = -0.115384
+texture = ExtResource( 9 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="strength_label_1" type="Label" parent="deck/card/SOLDIERS/soldier_card_4"]
+margin_left = 4.0
+margin_top = 3.0
+margin_right = 12.0
+margin_bottom = 21.0
+theme = ExtResource( 3 )
+custom_fonts/font = SubResource( 8 )
+text = "9"
+
+[node name="strength_label_2" type="Label" parent="deck/card/SOLDIERS/soldier_card_4"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -7.98183
+margin_top = -5.99995
+margin_right = 0.0181732
+margin_bottom = 12.0
+rect_rotation = 180.0
+theme = ExtResource( 3 )
+custom_fonts/font = SubResource( 8 )
+text = "9"
+
+[node name="place_card_trigger" type="TextureButton" parent="deck/card/SOLDIERS/soldier_card_4"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="place_card_ui" type="TextureRect" parent="deck/card/SOLDIERS/soldier_card_4/place_card_trigger"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -25.0
+margin_top = -26.0
+margin_right = 25.0
+margin_bottom = 26.0
+texture = ExtResource( 7 )
+expand = true
+
+[node name="place_card_button" type="TextureButton" parent="deck/card/SOLDIERS/soldier_card_4/place_card_trigger/place_card_ui"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -19.0
+margin_top = -6.0
+margin_right = 19.0
+margin_bottom = 6.0
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 6 )
+texture_hover = ExtResource( 4 )
+expand = true
+
+[node name="cancel_card_button" type="TextureButton" parent="deck/card/SOLDIERS/soldier_card_4/place_card_trigger/place_card_ui"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -3.5
+margin_top = -7.0
+margin_right = 3.5
+texture_normal = SubResource( 2 )
+texture_pressed = SubResource( 3 )
+texture_hover = SubResource( 4 )
+expand = true
+
+[node name="tomb" type="TextureButton" parent="deck/card/SOLDIERS/soldier_card_4"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 1
+texture_normal = ExtResource( 11 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="soldier_card_5" type="TextureRect" parent="deck/card/SOLDIERS"]
+anchor_left = -1.375
+anchor_top = -1.1282
+anchor_right = -0.393182
+anchor_bottom = -0.128205
+texture = ExtResource( 9 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="strength_label_1" type="Label" parent="deck/card/SOLDIERS/soldier_card_5"]
+margin_left = 4.0
+margin_top = 3.0
+margin_right = 12.0
+margin_bottom = 21.0
+theme = ExtResource( 3 )
+custom_fonts/font = SubResource( 8 )
+text = "9"
+
+[node name="strength_label_2" type="Label" parent="deck/card/SOLDIERS/soldier_card_5"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -7.98183
+margin_top = -6.00002
+margin_right = 0.0181732
+margin_bottom = 12.0
+rect_rotation = 180.0
+theme = ExtResource( 3 )
+custom_fonts/font = SubResource( 8 )
+text = "9"
+
+[node name="place_card_trigger" type="TextureButton" parent="deck/card/SOLDIERS/soldier_card_5"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="place_card_ui" type="TextureRect" parent="deck/card/SOLDIERS/soldier_card_5/place_card_trigger"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -25.0
+margin_top = -26.0
+margin_right = 25.0
+margin_bottom = 26.0
+texture = ExtResource( 7 )
+expand = true
+
+[node name="place_card_button" type="TextureButton" parent="deck/card/SOLDIERS/soldier_card_5/place_card_trigger/place_card_ui"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -19.0
+margin_top = -6.0
+margin_right = 19.0
+margin_bottom = 6.0
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 6 )
+texture_hover = ExtResource( 4 )
+expand = true
+
+[node name="cancel_card_button" type="TextureButton" parent="deck/card/SOLDIERS/soldier_card_5/place_card_trigger/place_card_ui"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -3.5
+margin_top = -7.0
+margin_right = 3.5
+texture_normal = SubResource( 2 )
+texture_pressed = SubResource( 3 )
+texture_hover = SubResource( 4 )
+expand = true
+
+[node name="tomb" type="TextureButton" parent="deck/card/SOLDIERS/soldier_card_5"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 1
+texture_normal = ExtResource( 11 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="soldier_card_6" type="TextureRect" parent="deck/card/SOLDIERS"]
+anchor_left = -0.0178571
+anchor_top = -1.11538
+anchor_right = 0.963961
+anchor_bottom = -0.115384
+texture = ExtResource( 9 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="strength_label_1" type="Label" parent="deck/card/SOLDIERS/soldier_card_6"]
+margin_left = 4.0
+margin_top = 3.0
+margin_right = 12.0
+margin_bottom = 21.0
+theme = ExtResource( 3 )
+custom_fonts/font = SubResource( 8 )
+text = "9"
+
+[node name="strength_label_2" type="Label" parent="deck/card/SOLDIERS/soldier_card_6"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -7.98183
+margin_top = -6.00002
+margin_right = 0.0181656
+margin_bottom = 12.0
+rect_rotation = 180.0
+theme = ExtResource( 3 )
+custom_fonts/font = SubResource( 8 )
+text = "9"
+
+[node name="place_card_trigger" type="TextureButton" parent="deck/card/SOLDIERS/soldier_card_6"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="place_card_ui" type="TextureRect" parent="deck/card/SOLDIERS/soldier_card_6/place_card_trigger"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -25.0
+margin_top = -26.0
+margin_right = 25.0
+margin_bottom = 26.0
+texture = ExtResource( 7 )
+expand = true
+
+[node name="place_card_button" type="TextureButton" parent="deck/card/SOLDIERS/soldier_card_6/place_card_trigger/place_card_ui"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -19.0
+margin_top = -6.0
+margin_right = 19.0
+margin_bottom = 6.0
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 6 )
+texture_hover = ExtResource( 4 )
+expand = true
+
+[node name="cancel_card_button" type="TextureButton" parent="deck/card/SOLDIERS/soldier_card_6/place_card_trigger/place_card_ui"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -3.5
+margin_top = -7.0
+margin_right = 3.5
+texture_normal = SubResource( 2 )
+texture_pressed = SubResource( 3 )
+texture_hover = SubResource( 4 )
+expand = true
+
+[node name="tomb" type="TextureButton" parent="deck/card/SOLDIERS/soldier_card_6"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 1
+texture_normal = ExtResource( 11 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="CITIZENS" type="Control" parent="deck/card"]
+anchor_left = 0.382223
+anchor_top = 0.0141388
+anchor_right = 0.631112
+anchor_bottom = 0.214653
+mouse_default_cursor_shape = 2
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="citizen_card_1" type="TextureRect" parent="deck/card/CITIZENS"]
+anchor_left = -0.0178571
+anchor_top = 0.0128205
+anchor_right = 0.963961
+anchor_bottom = 1.01282
+texture = ExtResource( 8 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="strength_label_1" type="Label" parent="deck/card/CITIZENS/citizen_card_1"]
+margin_left = 4.0
+margin_top = 2.0
+margin_right = 12.0
+margin_bottom = 20.0
+theme = ExtResource( 3 )
+custom_fonts/font = SubResource( 8 )
+text = "10"
+
+[node name="strength_label_2" type="Label" parent="deck/card/CITIZENS/citizen_card_1"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -6.98183
+margin_top = -5.0
+margin_right = 7.01817
+margin_bottom = 13.0
+rect_rotation = 180.0
+theme = ExtResource( 3 )
+custom_fonts/font = SubResource( 8 )
+text = "10"
+
+[node name="place_card_trigger" type="TextureButton" parent="deck/card/CITIZENS/citizen_card_1"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="place_card_ui" type="TextureRect" parent="deck/card/CITIZENS/citizen_card_1/place_card_trigger"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -25.0
+margin_top = -26.0
+margin_right = 25.0
+margin_bottom = 26.0
+texture = ExtResource( 7 )
+expand = true
+
+[node name="place_card_button" type="TextureButton" parent="deck/card/CITIZENS/citizen_card_1/place_card_trigger/place_card_ui"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -19.0
+margin_top = -6.0
+margin_right = 19.0
+margin_bottom = 6.0
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 6 )
+texture_hover = ExtResource( 4 )
+expand = true
+
+[node name="cancel_card_button" type="TextureButton" parent="deck/card/CITIZENS/citizen_card_1/place_card_trigger/place_card_ui"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -3.5
+margin_top = -7.0
+margin_right = 3.5
+texture_normal = SubResource( 2 )
+texture_pressed = SubResource( 3 )
+texture_hover = SubResource( 4 )
+expand = true
+
+[node name="tomb" type="TextureButton" parent="deck/card/CITIZENS/citizen_card_1"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 1
+texture_normal = ExtResource( 11 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="citizen_card_2" type="TextureRect" parent="deck/card/CITIZENS"]
+anchor_left = -1.39286
+anchor_top = 0.397436
+anchor_right = -0.411039
+anchor_bottom = 1.39744
+texture = ExtResource( 8 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="strength_label_1" type="Label" parent="deck/card/CITIZENS/citizen_card_2"]
+margin_left = 4.0
+margin_top = 2.0
+margin_right = 12.0
+margin_bottom = 20.0
+theme = ExtResource( 3 )
+custom_fonts/font = SubResource( 8 )
+text = "10"
+
+[node name="strength_label_2" type="Label" parent="deck/card/CITIZENS/citizen_card_2"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -6.98176
+margin_top = -5.0
+margin_right = 7.01824
+margin_bottom = 13.0
+rect_rotation = 180.0
+theme = ExtResource( 3 )
+custom_fonts/font = SubResource( 8 )
+text = "10"
+
+[node name="place_card_trigger" type="TextureButton" parent="deck/card/CITIZENS/citizen_card_2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="place_card_ui" type="TextureRect" parent="deck/card/CITIZENS/citizen_card_2/place_card_trigger"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -25.0
+margin_top = -26.0
+margin_right = 25.0
+margin_bottom = 26.0
+texture = ExtResource( 7 )
+expand = true
+
+[node name="place_card_button" type="TextureButton" parent="deck/card/CITIZENS/citizen_card_2/place_card_trigger/place_card_ui"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -19.0
+margin_top = -6.0
+margin_right = 19.0
+margin_bottom = 6.0
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 6 )
+texture_hover = ExtResource( 4 )
+expand = true
+
+[node name="cancel_card_button" type="TextureButton" parent="deck/card/CITIZENS/citizen_card_2/place_card_trigger/place_card_ui"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -3.5
+margin_top = -7.0
+margin_right = 3.5
+texture_normal = SubResource( 2 )
+texture_pressed = SubResource( 3 )
+texture_hover = SubResource( 4 )
+expand = true
+
+[node name="tomb" type="TextureButton" parent="deck/card/CITIZENS/citizen_card_2"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 1
+texture_normal = ExtResource( 11 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="citizen_card_3" type="TextureRect" parent="deck/card/CITIZENS"]
+anchor_left = 1.21429
+anchor_top = 0.371795
+anchor_right = 2.1961
+anchor_bottom = 1.37179
+texture = ExtResource( 8 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="strength_label_1" type="Label" parent="deck/card/CITIZENS/citizen_card_3"]
+margin_left = 4.0
+margin_top = 2.0
+margin_right = 12.0
+margin_bottom = 20.0
+theme = ExtResource( 3 )
+custom_fonts/font = SubResource( 8 )
+text = "10"
+
+[node name="strength_label_2" type="Label" parent="deck/card/CITIZENS/citizen_card_3"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -6.98187
+margin_top = -5.0
+margin_right = 7.01813
+margin_bottom = 13.0
+rect_rotation = 180.0
+theme = ExtResource( 3 )
+custom_fonts/font = SubResource( 8 )
+text = "10"
+
+[node name="place_card_trigger" type="TextureButton" parent="deck/card/CITIZENS/citizen_card_3"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="place_card_ui" type="TextureRect" parent="deck/card/CITIZENS/citizen_card_3/place_card_trigger"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -25.0
+margin_top = -26.0
+margin_right = 25.0
+margin_bottom = 26.0
+texture = ExtResource( 7 )
+expand = true
+
+[node name="place_card_button" type="TextureButton" parent="deck/card/CITIZENS/citizen_card_3/place_card_trigger/place_card_ui"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -19.0
+margin_top = -6.0
+margin_right = 19.0
+margin_bottom = 6.0
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 6 )
+texture_hover = ExtResource( 4 )
+expand = true
+
+[node name="cancel_card_button" type="TextureButton" parent="deck/card/CITIZENS/citizen_card_3/place_card_trigger/place_card_ui"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -3.5
+margin_top = -7.0
+margin_right = 3.5
+texture_normal = SubResource( 2 )
+texture_pressed = SubResource( 3 )
+texture_hover = SubResource( 4 )
+expand = true
+
+[node name="tomb" type="TextureButton" parent="deck/card/CITIZENS/citizen_card_3"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 1
+texture_normal = ExtResource( 11 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="tomb" type="Control" parent="deck"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 2.00012
+margin_top = 3.5
+margin_right = 2.00012
+margin_bottom = 3.5
+mouse_filter = 2
+
+[node name="tomb" type="TextureButton" parent="deck/tomb"]
+visible = false
+anchor_left = 0.398374
+anchor_top = 0.778555
+anchor_right = 0.621951
+anchor_bottom = 0.958042
+mouse_filter = 1
+texture_normal = ExtResource( 11 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="tomb2" type="TextureButton" parent="deck/tomb"]
+visible = false
+anchor_left = 0.394309
+anchor_top = 0.530303
+anchor_right = 0.617887
+anchor_bottom = 0.70979
+mouse_filter = 1
+texture_normal = ExtResource( 11 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="tomb3" type="TextureButton" parent="deck/tomb"]
+visible = false
+anchor_left = 0.711383
+anchor_top = 0.649184
+anchor_right = 0.93496
+anchor_bottom = 0.828671
+mouse_filter = 1
+texture_normal = ExtResource( 11 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="tomb4" type="TextureButton" parent="deck/tomb"]
+visible = false
+anchor_left = 0.0772363
+anchor_top = 0.656177
+anchor_right = 0.300813
+anchor_bottom = 0.835664
+mouse_filter = 1
+texture_normal = ExtResource( 11 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="tomb5" type="TextureButton" parent="deck/tomb"]
+visible = false
+anchor_left = 0.0813013
+anchor_top = 0.327506
+anchor_right = 0.304879
+anchor_bottom = 0.506993
+mouse_filter = 1
+texture_normal = ExtResource( 11 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="tomb6" type="TextureButton" parent="deck/tomb"]
+visible = false
+anchor_left = 0.386179
+anchor_top = 0.334499
+anchor_right = 0.609757
+anchor_bottom = 0.513986
+mouse_filter = 1
+texture_normal = ExtResource( 11 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="tomb7" type="TextureButton" parent="deck/tomb"]
+visible = false
+anchor_left = 0.703253
+anchor_top = 0.332168
+anchor_right = 0.92683
+anchor_bottom = 0.511655
+mouse_filter = 1
+texture_normal = ExtResource( 11 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="tomb8" type="TextureButton" parent="deck/tomb"]
+visible = false
+anchor_left = 0.386179
+anchor_top = 0.0664336
+anchor_right = 0.609757
+anchor_bottom = 0.245921
+mouse_filter = 1
+texture_normal = ExtResource( 11 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="tomb9" type="TextureButton" parent="deck/tomb"]
+visible = false
+anchor_left = 0.0772363
+anchor_top = 0.141026
+anchor_right = 0.300813
+anchor_bottom = 0.320513
+mouse_filter = 1
+texture_normal = ExtResource( 11 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="tomb10" type="TextureButton" parent="deck/tomb"]
+visible = false
+anchor_left = 0.670732
+anchor_top = 0.136364
+anchor_right = 0.894309
+anchor_bottom = 0.315851
+mouse_filter = 1
+texture_normal = ExtResource( 11 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="title_1" type="Label" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -28.5
+margin_top = 33.0
+margin_right = 28.5
+margin_bottom = 74.0
+theme = ExtResource( 3 )
+custom_fonts/font = SubResource( 5 )
+text = "DECK"
+
+[node name="luck" type="TextureRect" parent="."]
+visible = false
+anchor_left = -0.0133333
+anchor_top = 0.05
+anchor_right = 0.839999
+anchor_bottom = 0.766667
+texture = ExtResource( 13 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Label" type="Label" parent="luck"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -31.0
+margin_top = 112.0
+margin_right = 42.0
+margin_bottom = 148.0
+custom_fonts/font = SubResource( 6 )
+text = "CARDS"
+
+[node name="card_counter" type="Label" parent="luck"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -15.9998
+margin_top = -33.0
+margin_right = 24.0002
+margin_bottom = 38.0
+custom_fonts/font = SubResource( 7 )
+text = "10"
+align = 1
+
+[node name="place_card" type="TextureButton" parent="luck"]
+anchor_left = 0.201987
+anchor_top = 0.673228
+anchor_right = 0.807947
+anchor_bottom = 0.751969
+texture_normal = ExtResource( 17 )
+texture_pressed = ExtResource( 16 )
+texture_hover = ExtResource( 14 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[connection signal="pressed" from="deck/card/KING/king_card/place_card_trigger" to="." method="_on_place_card_trigger_pressed"]
+[connection signal="pressed" from="deck/card/KING/king_card/place_card_trigger/place_card_ui/place_card_button" to="." method="_on_place_king_card_button_pressed"]
+[connection signal="pressed" from="deck/card/KING/king_card/place_card_trigger/place_card_ui/cancel_card_button" to="." method="_on_cancel_card_button_pressed"]
+[connection signal="pressed" from="deck/card/KING/king_card/tomb" to="." method="_on_place_card_trigger_civilian_card_1_pressed"]
+[connection signal="pressed" from="deck/card/SOLDIERS/soldier_card_1/place_card_trigger" to="." method="_on_place_card_trigger_soldier_card_1_pressed"]
+[connection signal="pressed" from="deck/card/SOLDIERS/soldier_card_1/place_card_trigger/place_card_ui/place_card_button" to="." method="_on_place_soldier1_card_button_pressed"]
+[connection signal="pressed" from="deck/card/SOLDIERS/soldier_card_1/place_card_trigger/place_card_ui/cancel_card_button" to="." method="_on_cancel_card_button_soldier_1_pressed"]
+[connection signal="pressed" from="deck/card/SOLDIERS/soldier_card_1/tomb" to="." method="_on_place_card_trigger_civilian_card_1_pressed"]
+[connection signal="pressed" from="deck/card/SOLDIERS/soldier_card_2/place_card_trigger" to="." method="_on_place_card_trigger_soldier_card_2_pressed"]
+[connection signal="pressed" from="deck/card/SOLDIERS/soldier_card_2/place_card_trigger/place_card_ui/place_card_button" to="." method="_on_place_soldier2_card_button_pressed"]
+[connection signal="pressed" from="deck/card/SOLDIERS/soldier_card_2/place_card_trigger/place_card_ui/cancel_card_button" to="." method="_on_cancel_card_button_soldier_2_pressed"]
+[connection signal="pressed" from="deck/card/SOLDIERS/soldier_card_2/tomb" to="." method="_on_place_card_trigger_civilian_card_1_pressed"]
+[connection signal="pressed" from="deck/card/SOLDIERS/soldier_card_3/place_card_trigger" to="." method="_on_place_card_trigger_soldier_card_3_pressed"]
+[connection signal="pressed" from="deck/card/SOLDIERS/soldier_card_3/place_card_trigger/place_card_ui/place_card_button" to="." method="_on_place_soldier3_card_button_pressed"]
+[connection signal="pressed" from="deck/card/SOLDIERS/soldier_card_3/place_card_trigger/place_card_ui/cancel_card_button" to="." method="_on_cancel_card_button_soldier_3_pressed"]
+[connection signal="pressed" from="deck/card/SOLDIERS/soldier_card_3/tomb" to="." method="_on_place_card_trigger_civilian_card_1_pressed"]
+[connection signal="pressed" from="deck/card/SOLDIERS/soldier_card_4/place_card_trigger" to="." method="_on_place_card_trigger_soldier_card_4_pressed"]
+[connection signal="pressed" from="deck/card/SOLDIERS/soldier_card_4/place_card_trigger/place_card_ui/place_card_button" to="." method="_on_place_soldier4_card_button_pressed"]
+[connection signal="pressed" from="deck/card/SOLDIERS/soldier_card_4/place_card_trigger/place_card_ui/cancel_card_button" to="." method="_on_cancel_card_button_soldier_4_pressed"]
+[connection signal="pressed" from="deck/card/SOLDIERS/soldier_card_4/tomb" to="." method="_on_place_card_trigger_civilian_card_1_pressed"]
+[connection signal="pressed" from="deck/card/SOLDIERS/soldier_card_5/place_card_trigger" to="." method="_on_place_card_trigger_soldier_card_5_pressed"]
+[connection signal="pressed" from="deck/card/SOLDIERS/soldier_card_5/place_card_trigger/place_card_ui/place_card_button" to="." method="_on_place_soldier5_card_button_pressed"]
+[connection signal="pressed" from="deck/card/SOLDIERS/soldier_card_5/place_card_trigger/place_card_ui/cancel_card_button" to="." method="_on_cancel_card_button_soldier_5_pressed"]
+[connection signal="pressed" from="deck/card/SOLDIERS/soldier_card_5/tomb" to="." method="_on_place_card_trigger_civilian_card_1_pressed"]
+[connection signal="pressed" from="deck/card/SOLDIERS/soldier_card_6/place_card_trigger" to="." method="_on_place_card_trigger_soldier_card_6_pressed"]
+[connection signal="pressed" from="deck/card/SOLDIERS/soldier_card_6/place_card_trigger/place_card_ui/place_card_button" to="." method="_on_place_soldier6_card_button_pressed"]
+[connection signal="pressed" from="deck/card/SOLDIERS/soldier_card_6/place_card_trigger/place_card_ui/cancel_card_button" to="." method="_on_cancel_card_button_soldier_6_pressed"]
+[connection signal="pressed" from="deck/card/SOLDIERS/soldier_card_6/tomb" to="." method="_on_place_card_trigger_civilian_card_1_pressed"]
+[connection signal="pressed" from="deck/card/CITIZENS/citizen_card_1/place_card_trigger" to="." method="_on_place_card_trigger_civilian_card_1_pressed"]
+[connection signal="pressed" from="deck/card/CITIZENS/citizen_card_1/place_card_trigger/place_card_ui/place_card_button" to="." method="_on_place_citizen1_card_button_pressed"]
+[connection signal="pressed" from="deck/card/CITIZENS/citizen_card_1/place_card_trigger/place_card_ui/cancel_card_button" to="." method="_on_cancel_card_button_civilian_1_pressed"]
+[connection signal="pressed" from="deck/card/CITIZENS/citizen_card_1/tomb" to="." method="_on_place_card_trigger_civilian_card_1_pressed"]
+[connection signal="pressed" from="deck/card/CITIZENS/citizen_card_2/place_card_trigger" to="." method="_on_place_card_trigger_civilian_card_2_pressed"]
+[connection signal="pressed" from="deck/card/CITIZENS/citizen_card_2/place_card_trigger/place_card_ui/place_card_button" to="." method="_on_place_citizen2_card_button_pressed"]
+[connection signal="pressed" from="deck/card/CITIZENS/citizen_card_2/place_card_trigger/place_card_ui/cancel_card_button" to="." method="_on_cancel_card_button_civilian_2_pressed"]
+[connection signal="pressed" from="deck/card/CITIZENS/citizen_card_2/tomb" to="." method="_on_place_card_trigger_civilian_card_1_pressed"]
+[connection signal="pressed" from="deck/card/CITIZENS/citizen_card_3/place_card_trigger" to="." method="_on_place_card_trigger_civilian_card_3_pressed"]
+[connection signal="pressed" from="deck/card/CITIZENS/citizen_card_3/place_card_trigger/place_card_ui/place_card_button" to="." method="_on_place_citizen3_card_button_pressed"]
+[connection signal="pressed" from="deck/card/CITIZENS/citizen_card_3/place_card_trigger/place_card_ui/cancel_card_button" to="." method="_on_cancel_card_button_civilian_3_pressed"]
+[connection signal="pressed" from="deck/card/CITIZENS/citizen_card_3/tomb" to="." method="_on_place_card_trigger_civilian_card_1_pressed"]
+[connection signal="pressed" from="luck/place_card" to="." method="_on_place_card_pressed"]

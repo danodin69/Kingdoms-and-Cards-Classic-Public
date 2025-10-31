@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Handel - Sarabande (Keyboard Suite in D Minor).mp3-ed0e5e03e10fc9408a6ce058779311b5.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/music/Handel - Sarabande (Keyboard Suite in D Minor).mp3"
+dest_files=[ "res://.import/Handel - Sarabande (Keyboard Suite in D Minor).mp3-ed0e5e03e10fc9408a6ce058779311b5.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
