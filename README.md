@@ -1,6 +1,6 @@
 # 🎴 Kingdoms & Cards Classic ⛓️
 
-[![Godot Engine](https://img.shields.io/badge/Godot-3.6-blue.svg)](https://godotengine.org/)
+[![Godot Engine](https://img.shields.io/badge/Godot-3.6-blue.svg)]((https://godotengine.org/download/3.x))
 [![Hedera Hashgraph](https://img.shields.io/badge/Hedera-Testnet-00d4aa.svg)](https://hedera.com/)
 [![License](https://img.shields.io/badge/license-Source--Available-orange.svg)](LICENSE.md)
 [![Play on itch.io](https://img.shields.io/badge/Play-itch.io-fa5c5c.svg)](https://danodin.itch.io/kingdoms-cards-classic)
