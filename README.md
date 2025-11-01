@@ -4,10 +4,11 @@
 [![Hedera Hashgraph](https://img.shields.io/badge/Hedera-Testnet-00d4aa.svg)](https://hedera.com/)
 [![License](https://img.shields.io/badge/license-Source--Available-orange.svg)](LICENSE.md)
 [![Play on itch.io](https://img.shields.io/badge/Play-itch.io-fa5c5c.svg)](https://danodin.itch.io/kingdoms-cards-classic)
+[![Hedera Certified](https://img.shields.io/badge/Hedera-Certified%20Developer-00d4aa.svg)](https://certs.hashgraphdev.com/9df500a8-01ff-4130-9924-26a156d815fb.pdf)
 
 > A strategic card battler where Rock-Paper-Scissors meets dice-driven combat, enhanced by blockchain transparency.
 
-**Built for Hedera Africa Hackathon 2025** | **Developed by 2404STUDIOS's Dan Odin**
+**Built for Hedera Hackathon Africa 2025** | **Developed by 2404STUDIOS's Dan Odin**
 
 ---
 
@@ -269,6 +270,16 @@ func _is_valid_account_format(account_id: String) -> bool:
 
 ---
 
+
+## 📊 Project Resources
+
+### Hackathon Submission Materials
+
+- 🎯 **[Pitch Deck](https://docs.google.com/presentation/d/e/2PACX-1vQqhjdNDXoehXmFVP6PUOG4QiLRfISHI0dFjcUuEodoYa-D1fG1e-5EUmQ42PStcpJNZepyyYnetZ2z/pub?start=false&loop=false&delayms=3000)** - Full project presentation
+- 🏆 **[Hedera Certification](https://certs.hashgraphdev.com/9df500a8-01ff-4130-9924-26a156d815fb.pdf)** - Developer certification
+
+---
+
 ## 📝 License
 
 **Source-Available License - Educational Use Only**
@@ -289,7 +300,7 @@ for educational purposes only.
 - ✅ Learning from the implementation
 - ✅ Referencing in educational contexts (with attribution)
 
-This project was created for the Hedera Africa Hackathon 2025 and is provided 
+This project was created for the Hedera Hackathon Africa 2025 and is provided 
 for transparency and educational purposes only.
 
 For commercial licensing inquiries, contact: 2404studios@gmail.com
@@ -309,7 +320,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND.
 
 ## 🙏 Acknowledgments
 
-- Built for the **Hedera Africa Hackathon 2025**
+- Built for the **Hedera Hackathon Africa 2025**
 - Special thanks to the Hedera developer community (JTconnect Ibadan)
 - Inspired by classic card games and roguelike progression systems
 
