@@ -3303,7 +3303,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="ANIMATOR" type="Node" parent="."]
+[node name="ANIMATOR" type="Node2D" parent="."]
 
 [node name="card_player" type="TextureRect" parent="ANIMATOR"]
 anchor_top = 1.0
