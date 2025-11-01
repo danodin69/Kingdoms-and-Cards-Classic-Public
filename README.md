@@ -302,7 +302,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND.
 
 **2404STUDIOS**
 - **Developer**: Dan Odin
-- **Contact**: [Twitter](https://x.com/danodin69) | [Telegram](https://t.me/danodin)
+- **Contact**: [Twitter](https://x.com/danodin69) | [Telegram](https://t.me/danodin | [Twitter](https://x.com/2404STUDIO)
+- **Support**:  Dahunsi, Favour, Dammy
 
 ---
 
@@ -311,7 +312,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND.
 - Built for the **Hedera Africa Hackathon 2025**
 - Special thanks to the Hedera developer community (JTconnect Ibadan)
 - Inspired by classic card games and roguelike progression systems
-- 2404STUDIOS: Dahunsi, Favour, Dammy
 
 ---
 
