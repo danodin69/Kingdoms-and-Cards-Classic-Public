@@ -7,7 +7,7 @@
 
 > A strategic card battler where Rock-Paper-Scissors meets dice-driven combat, enhanced by blockchain transparency.
 
-**Built for Hedera Hackathon 2025** | **Developed by 2404STUDIOS's Dan Odin**
+**Built for Hedera Africa Hackathon 2025** | **Developed by 2404STUDIOS's Dan Odin**
 
 ---
 
