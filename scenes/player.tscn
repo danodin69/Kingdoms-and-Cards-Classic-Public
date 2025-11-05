@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://assets/graphics/ui/player_deck.png" type="Texture" id=1]
 [ext_resource path="res://assets/graphics/cards/king.png" type="Texture" id=2]
@@ -34,6 +34,46 @@ load_path = "res://.import/kkc_#g12958_exit.png-d421bcbeb8476cbe30661561c183e8e2
 [sub_resource type="StreamTexture" id=4]
 flags = 4
 load_path = "res://.import/kkc_#g12331_exit.png-6d2a106d891a2bb33486016cbc308356.stex"
+
+[sub_resource type="StreamTexture" id=9]
+flags = 4
+load_path = "res://.import/tomb.png-92d9f767a1df8dba50263f1a74a4a97f.stex"
+
+[sub_resource type="StreamTexture" id=10]
+flags = 4
+load_path = "res://.import/tomb.png-92d9f767a1df8dba50263f1a74a4a97f.stex"
+
+[sub_resource type="StreamTexture" id=11]
+flags = 4
+load_path = "res://.import/tomb.png-92d9f767a1df8dba50263f1a74a4a97f.stex"
+
+[sub_resource type="StreamTexture" id=19]
+flags = 4
+load_path = "res://.import/tomb.png-92d9f767a1df8dba50263f1a74a4a97f.stex"
+
+[sub_resource type="StreamTexture" id=20]
+flags = 4
+load_path = "res://.import/tomb.png-92d9f767a1df8dba50263f1a74a4a97f.stex"
+
+[sub_resource type="StreamTexture" id=14]
+flags = 4
+load_path = "res://.import/tomb.png-92d9f767a1df8dba50263f1a74a4a97f.stex"
+
+[sub_resource type="StreamTexture" id=15]
+flags = 4
+load_path = "res://.import/tomb.png-92d9f767a1df8dba50263f1a74a4a97f.stex"
+
+[sub_resource type="StreamTexture" id=16]
+flags = 4
+load_path = "res://.import/tomb.png-92d9f767a1df8dba50263f1a74a4a97f.stex"
+
+[sub_resource type="StreamTexture" id=17]
+flags = 4
+load_path = "res://.import/tomb.png-92d9f767a1df8dba50263f1a74a4a97f.stex"
+
+[sub_resource type="StreamTexture" id=18]
+flags = 4
+load_path = "res://.import/tomb.png-92d9f767a1df8dba50263f1a74a4a97f.stex"
 
 [sub_resource type="DynamicFont" id=5]
 size = 24
@@ -1050,7 +1090,7 @@ anchor_top = 0.778555
 anchor_right = 0.621951
 anchor_bottom = 0.958042
 mouse_filter = 1
-texture_normal = ExtResource( 11 )
+texture_normal = SubResource( 9 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": true
@@ -1063,7 +1103,7 @@ anchor_top = 0.530303
 anchor_right = 0.617887
 anchor_bottom = 0.70979
 mouse_filter = 1
-texture_normal = ExtResource( 11 )
+texture_normal = SubResource( 10 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": true
@@ -1071,12 +1111,12 @@ __meta__ = {
 
 [node name="tomb3" type="TextureButton" parent="deck/tomb"]
 visible = false
-anchor_left = 0.711383
-anchor_top = 0.649184
-anchor_right = 0.93496
-anchor_bottom = 0.828671
+anchor_left = 0.0772363
+anchor_top = 0.656177
+anchor_right = 0.300813
+anchor_bottom = 0.835664
 mouse_filter = 1
-texture_normal = ExtResource( 11 )
+texture_normal = SubResource( 11 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": true
@@ -1084,12 +1124,12 @@ __meta__ = {
 
 [node name="tomb4" type="TextureButton" parent="deck/tomb"]
 visible = false
-anchor_left = 0.0772363
-anchor_top = 0.656177
-anchor_right = 0.300813
-anchor_bottom = 0.835664
+anchor_left = 0.711383
+anchor_top = 0.649184
+anchor_right = 0.93496
+anchor_bottom = 0.828671
 mouse_filter = 1
-texture_normal = ExtResource( 11 )
+texture_normal = SubResource( 19 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": true
@@ -1097,12 +1137,14 @@ __meta__ = {
 
 [node name="tomb5" type="TextureButton" parent="deck/tomb"]
 visible = false
-anchor_left = 0.0813013
-anchor_top = 0.327506
-anchor_right = 0.304879
-anchor_bottom = 0.506993
+anchor_left = 0.703253
+anchor_top = 0.332168
+anchor_right = 0.92683
+anchor_bottom = 0.511655
+margin_left = 3.05176e-05
+margin_right = 1.52588e-05
 mouse_filter = 1
-texture_normal = ExtResource( 11 )
+texture_normal = SubResource( 20 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": true
@@ -1115,7 +1157,7 @@ anchor_top = 0.334499
 anchor_right = 0.609757
 anchor_bottom = 0.513986
 mouse_filter = 1
-texture_normal = ExtResource( 11 )
+texture_normal = SubResource( 14 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": true
@@ -1123,12 +1165,12 @@ __meta__ = {
 
 [node name="tomb7" type="TextureButton" parent="deck/tomb"]
 visible = false
-anchor_left = 0.703253
-anchor_top = 0.332168
-anchor_right = 0.92683
-anchor_bottom = 0.511655
+anchor_left = 0.0813013
+anchor_top = 0.327506
+anchor_right = 0.304879
+anchor_bottom = 0.506993
 mouse_filter = 1
-texture_normal = ExtResource( 11 )
+texture_normal = SubResource( 15 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": true
@@ -1141,7 +1183,7 @@ anchor_top = 0.0664336
 anchor_right = 0.609757
 anchor_bottom = 0.245921
 mouse_filter = 1
-texture_normal = ExtResource( 11 )
+texture_normal = SubResource( 16 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": true
@@ -1154,7 +1196,7 @@ anchor_top = 0.141026
 anchor_right = 0.300813
 anchor_bottom = 0.320513
 mouse_filter = 1
-texture_normal = ExtResource( 11 )
+texture_normal = SubResource( 17 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": true
@@ -1167,7 +1209,7 @@ anchor_top = 0.136364
 anchor_right = 0.894309
 anchor_bottom = 0.315851
 mouse_filter = 1
-texture_normal = ExtResource( 11 )
+texture_normal = SubResource( 18 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": true

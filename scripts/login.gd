@@ -1,4 +1,4 @@
-# scenes/login_screen.gd
+# scripts/login.gd
 extends Control
 
 onready var account_input = $AccountInput

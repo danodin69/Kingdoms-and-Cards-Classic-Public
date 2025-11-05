@@ -1,3 +1,4 @@
+# scripts/dummy_player.gd
 extends Control
 
 

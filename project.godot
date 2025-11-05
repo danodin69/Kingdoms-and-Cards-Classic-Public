@@ -18,7 +18,7 @@ config/icon="res://assets/graphics/ui/logo/game_icon.png"
 
 [autoload]
 
-shuffler="*res://scripts/shuffler.gd"
+shuffler="*res://autoload/shuffler.gd"
 HederaAuth="*res://autoload/auth_manager.gd"
 
 [display]
